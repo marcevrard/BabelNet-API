@@ -113,17 +113,17 @@ have to add the config folder to your classpath. For instance:
    This creates a new folder with the project name projectFolder/ under your Eclipse workspace folder.
 2. Copy the `config/` and `resources/` folders from the `BabelNet-API-3.7.1` folder into your `workspace/projectFolder/`
 3. Now we need to include all the `lib/*.jar` files and the `babelnet-api-3.7.1.jar` file in the project build classpath:
-  1. Select the project from 'Package Explorer' tree view
-  2. From the top bar click on 'Project' and then 'Properties'
-  3. Once inside the 'Properties' section click on 'Java build path' and select the 'Libraries' tab
-  4. From the right menu click on the 'Add External JARs' button
-  5. Browse to the downloaded `BabelNet-API-3.7.1` folder, and select all the `lib/*.jar`
+   1. Select the project from 'Package Explorer' tree view
+   2. From the top bar click on 'Project' and then 'Properties'
+   3. Once inside the 'Properties' section click on 'Java build path' and select the 'Libraries' tab
+   4. From the right menu click on the 'Add External JARs' button
+   5. Browse to the downloaded `BabelNet-API-3.7.1` folder, and select all the `lib/*.jar`
        files along with the `babelnet-api-3.7.1.jar` file
 4. Next we need to include the `config/` folder in the project build classpath:
-  1. Select the project from 'Package Explorer' tree view
-  2. From the top bar click on 'File' and then 'Refresh'
-  3. From the 'Java build path' (see point 3 above) select the 'Source' tab
-  4. Once in the 'Source' tab, click on 'Add Folder' from the right sidebar and select the downloaded `config/` folder
+   1. Select the project from 'Package Explorer' tree view
+   2. From the top bar click on 'File' and then 'Refresh'
+   3. From the 'Java build path' (see point 3 above) select the 'Source' tab
+   4. Once in the 'Source' tab, click on 'Add Folder' from the right sidebar and select the downloaded `config/` folder
 5. Happy coding!! ;-)
 
 For more information consult the guide online, http://babelnet.org/guide

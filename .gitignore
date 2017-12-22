@@ -44,3 +44,4 @@ gradle-app.setting
 !babelnet-api-3.7.1.jar
 config/my.babelnet.var.properties
 config/my.jlt.var.properties
+.settings/org.eclipse.buildship.core.prefs

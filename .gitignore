@@ -42,3 +42,4 @@ gradle-app.setting
 .directory
 !lib/*jar
 !babelnet-api-3.7.1.jar
+config/my.babelnet.var.properties

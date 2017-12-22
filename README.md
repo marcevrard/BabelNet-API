@@ -6,7 +6,12 @@ Info related to this forked project
 Create the project structure
 ----------------------------
 
-Move all `.jar` in `lib/`.
+1. Move all `.jar` in `lib/`.
+2. Copy the var.property file in config as shown below and add your key
+
+    cp babelnet.var.properties my.babelnet.var.properties
+
+3. Configure the project using `gradle` or `maven` (or `Eclipse` following the original README below).
 
 ### Using `gradle`
 

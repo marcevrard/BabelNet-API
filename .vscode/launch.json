@@ -6,6 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SynFreq",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "SynsetFrequency",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "Demo",
             "request": "launch",
             "cwd": "${workspaceFolder}",

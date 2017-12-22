@@ -6,30 +6,27 @@ Info related to this forked project
 Create the project structure
 ----------------------------
 
+Move all `.jar` in `lib/`.
+
 ### Using `gradle`
 
-```
-gradle init --type java-library
-```
+    gradle init --type java-library
+
 And add:
-```
-dependencies {
-    compile fileTree(dir: 'lib', include: ['*.jar'])
-}
-```
 
-### Or using `maven`*
+    dependencies {
+        // BabelNet related (Add External JARs)
+        compile fileTree(dir: 'lib', include: ['*.jar'])
+    }
 
-```
-mvn archetype:generate \
-    -DgroupId=org.babelfy \
-    -DartifactId=BabelNet-API \
-    -DarchetypeArtifactId=maven-archetype-quickstart \
-    -DinteractiveMode=false
+### Or using `maven` *(incomplete!)*
 
-...
-```
-(*incomplete procedure)
+    mvn archetype:generate \
+        -DgroupId=org.babelnet \
+        -DartifactId=BabelNet-API \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DinteractiveMode=false
+    ...
 
 *************************************
 
@@ -49,20 +46,18 @@ CONTENTS
 
 This package contains the following main components:
 
-```
-  babelnet-api-3.7.1.jar	# Jar of the BabelNet API
-  CHANGELOG			# changelog for the BabelNet API
-  config/			# configuration files
-  docs/				# Javadocs
-  lib/				# 3rd party libraries
-  LICENSE			# BabelNet API's license
-  licenses/			# 3rd party libraries' licenses
-  README			# this file
-  resources/			# resource files needed by the API
-  run-babelnetdemo.sh		# shell script to test BabelNet in Linux
-  run-babelnetdemo.bat		# shell script to test BabelNet in Windows
-  examples/			# Java examples source file
-```
+    babelnet-api-3.7.1.jar	# Jar of the BabelNet API
+    CHANGELOG			# changelog for the BabelNet API
+    config/			# configuration files
+    docs/				# Javadocs
+    lib/				# 3rd party libraries
+    LICENSE			# BabelNet API's license
+    licenses/			# 3rd party libraries' licenses
+    README			# this file
+    resources/			# resource files needed by the API
+    run-babelnetdemo.sh		# shell script to test BabelNet in Linux
+    run-babelnetdemo.bat		# shell script to test BabelNet in Windows
+    examples/			# Java examples source file
 
 REQUIREMENTS
 ------------
@@ -151,10 +146,8 @@ If your WordNet is not installed in the standard location
 (/usr/local/share/wordnet-3.0), please change the corresponding property
 in the config/jlt.var.properties file:
 
-```
-# simply put /usr/local/share/wordnet
-jlt.wordnetPrefix=/usr/local/share/wordnet
-```
+    # simply put /usr/local/share/wordnet
+    jlt.wordnetPrefix=/usr/local/share/wordnet
 
 to the prefix of your WordNet path without the `-3.0` suffix. For instance,
 if WordNet 3.0 is located in `/opt/WordNet-3.0`, you should change the property

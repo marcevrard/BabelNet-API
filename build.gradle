@@ -25,5 +25,8 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    // BabelNet related (Add External JARs)
+    compile fileTree(dir: 'lib', include: ['*.jar'])
 }
 

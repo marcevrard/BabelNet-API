@@ -7,9 +7,13 @@ Create the project structure
 ----------------------------
 
 1. Move all `.jar` in `lib/`.
-2. Copy the var.property file in config as shown below and add your key
+2. Copy the `babelnet.var.property` file in the config directory as shown below and add your key (if the local BabelNet index is available, comment out `babelnet.restfulurl`, uncomment `babelnet.dir` and add its path)
 
-    cp babelnet.var.properties my.babelnet.var.properties
+       cp babelnet.var.properties my.babelnet.var.properties
+
+3. Copy the `jlt.var.properties` file as shown below (possibly add your WordNet path if local BabelNet index are used)
+
+       cp jlt.var.properties my.jlt.var.properties
 
 3. Configure the project using `gradle` or `maven` (or `Eclipse` following the original README below).
 

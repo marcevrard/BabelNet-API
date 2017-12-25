@@ -10,7 +10,7 @@ import it.uniroma1.lcl.babelnet.data.BabelPOS;
 import it.uniroma1.lcl.jlt.util.Language;
 
 
-public class SynsetFrequency
+public class SynsetsFrequency
 {
     public static void getFrequencies() throws IOException {
         BabelNet bn = BabelNet.getInstance();

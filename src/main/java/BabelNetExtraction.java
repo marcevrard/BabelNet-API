@@ -19,7 +19,7 @@ import it.uniroma1.lcl.babelnet.data.BabelPOS;
 import it.uniroma1.lcl.jlt.util.Language;
 
 
-public class SynsetsFrequency
+public class BabelNetExtraction
 {
     static public void main(String[] args) {
         try {

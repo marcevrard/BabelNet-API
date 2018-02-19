@@ -6,12 +6,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "SynFreq",
+            "name": "BabelExtr",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "SynsetsFrequency",
+            "mainClass": "BabelNetExtraction",
             "args": ""
         },
         {

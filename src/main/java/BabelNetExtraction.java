@@ -41,13 +41,14 @@ public class BabelNetExtraction {
         Collections.sort(synsets, new BabelSynsetComparator(word));
         for (BabelSynset synset : synsets) {
             for (BabelSynsetIDRelation relation : synset.getEdges())
-                System.out.println(synset.getId()
-                                   + "\t" + relation.getNormalizedWeight()
-                                   + "\t" + relation.getWeight()
+                System.out.println(synset.getId().toString()
                                    + "\t" + relation.getTarget()
-                                   + "\t" + relation.getBabelSynsetIDTarget()
                                    + "\t" + relation.getLanguage()
-                                   + "\t" + relation.toString());
+                                   + "\t" + relation.getWeight()
+                                   + "\t" + relation.getNormalizedWeight()
+                                   + "\t" + relation.getPointer()
+                                   + "\t" + relation.toString()
+                );
             System.out.println("-----");
         }
     }

@@ -2,6 +2,28 @@ Changelog for BabelNet and the BabelNet API:
 
 Ver     : Release Date  : Changes
 =================================
+
+4.0     : February 26, 2018
+
+* Manual validation of resource mappings, with more than 2000 wrong mappings now corrected
+
+* Total number of languages increased from 271 to 284. New languages include: Adyghe, Azerbaijani, Goan Konkani, Livvinkarjala, Maithili, Northern Luri, Serbo-Croatian, South Patois, Tarantino, Tulu
+
+* Cantonese, Min Nan and Classical Chinese are now managed and searchable separately from standard Chinese
+
+* All Chinese lemmas are now normalized to simplified characters, so simplified Chinese must be used when querying BabelNet
+
+* Update of all of the resources, including:
+    - All of the Open Multilingual Wordnets at their latest release
+    - Wikipedia, Wiktionary, Wikidata and OmegaWiki
+
+* Improved management of Open Multilingual Wordnets that are no longer stored under a single resource name
+
+* Integration of new open wordnets for Gaelic, Portuguese and Korean
+
+* Several bug fixes and improvements, including improved management of resource licenses, removal of Wikipedia lists and Wikipedia disambiguation pages, etc.
+
+---------------------------------
 3.7.1 	: September 11, 2017 : BUG: fix BabelPointer filter; BUG: fix BabelSynset.isKeyConcept()
 ---------------------------------
 3.7 	: August 01, 2016    : Updated domains; Added FrameNet, WN-Map (automatically generated mappings among WordNet versions) and the key concepts; Minor bug fixing

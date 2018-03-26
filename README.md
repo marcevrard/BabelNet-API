@@ -40,8 +40,8 @@ And add:
 *************************************
 
 
-README - BabelNet API 3.7.1 (September 2017)
-============================================
+README - BabelNet API 34.0 (February 2018)
+==========================================
 
 This package consists of a Java API to work with BabelNet, a very large
 multilingual semantic network. For more information please refer to the
@@ -55,7 +55,7 @@ CONTENTS
 
 This package contains the following main components:
 
-    babelnet-api-3.7.1.jar	# Jar of the BabelNet API
+    babelnet-api-4.0.jar	# Jar of the BabelNet API
     CHANGELOG			# changelog for the BabelNet API
     config/			# configuration files
     docs/				# Javadocs
@@ -71,14 +71,14 @@ This package contains the following main components:
 REQUIREMENTS
 ------------
 
-We assume that you have a standard installation of the Sun Java 1.7 JDK
+We assume that you have a standard installation of the Sun Java 1.8 JDK
 and all the associated programs (i.e., java, javac, etc.) in your path.
 
 INSTALLATION
 ------------
 
 Currently, we provide BabelNet as a semantic network consisting
-of 271 languages (English, Catalan, French, German, Italian, Spanish, Afrikaans,
+of 284 languages (English, Catalan, French, German, Italian, Spanish, Afrikaans,
 Arabic, Bulgarian, Czech, Welsh, Danish, Greek, Estonian, Persian, Finnish,
 Irish, Hebrew, Hindi, Croatian, Hungarian, Indonesian, Icelandic, Japanese,
 Korean, Lithuanian, Latvian, Malay, Dutch, Norwegian, Polish, Portuguese,
@@ -105,24 +105,24 @@ provide a shell script:
 IMPORTANT: please note that, in order to enable the log4j settings, you
 have to add the config folder to your classpath. For instance:
 
-    Linux:   java -classpath lib/*:babelnet-api-3.7.1.jar:config
+    Linux:   java -classpath lib/*:babelnet-api-4.0.jar:config
                  it.uniroma1.lcl.babelnet.demo.BabelNetDemo
 
-    Windows: java -classpath lib/*;babelnet-api-3.7.1.jar;config
+    Windows: java -classpath lib/*;babelnet-api-4.0.jar;config
                  it.uniroma1.lcl.babelnet.demo.BabelNetDemo
 
 #### 1.1 Configuring BabelNet API within an Eclipse project
 
 1. Create your Eclipse project (File -> New -> Java project, give the project a name and press Finish).
    This creates a new folder with the project name projectFolder/ under your Eclipse workspace folder.
-2. Copy the `config/` and `resources/` folders from the `BabelNet-API-3.7.1` folder into your `workspace/projectFolder/`
-3. Now we need to include all the `lib/*.jar` files and the `babelnet-api-3.7.1.jar` file in the project build classpath:
+2. Copy the `config/` and `resources/` folders from the `BabelNet-API-4.0` folder into your `workspace/projectFolder/`
+3. Now we need to include all the `lib/*.jar` files and the `babelnet-api-4.0.jar` file in the project build classpath:
    1. Select the project from 'Package Explorer' tree view
    2. From the top bar click on 'Project' and then 'Properties'
    3. Once inside the 'Properties' section click on 'Java build path' and select the 'Libraries' tab
    4. From the right menu click on the 'Add External JARs' button
-   5. Browse to the downloaded `BabelNet-API-3.7.1` folder, and select all the `lib/*.jar`
-       files along with the `babelnet-api-3.7.1.jar` file
+   5. Browse to the downloaded `BabelNet-API-4.0` folder, and select all the `lib/*.jar`
+       files along with the `babelnet-api-4.0.jar` file
 4. Next we need to include the `config/` folder in the project build classpath:
    1. Select the project from 'Package Explorer' tree view
    2. From the top bar click on 'File' and then 'Refresh'
@@ -140,16 +140,16 @@ unpack it, e.g.:
    NOTE: For more information about how to send a request to download the BabelNet indices, please consult the guide at: http://babelnet.org/guide (tab: key & limits). The instructions will be inserted in the guide when the indices will be downloadable. Thank you for your patience.
 
     # unpack the archives
-    tar xjvf babelnet-3.7-index.tar.bz2
+    tar xjvf babelnet-4.0-index.tar.bz2
 
-The BabelNet-3.7 directory now contains all the unpacked indices.
+The BabelNet-4.0 directory now contains all the unpacked indices.
 
 Next, tell the API where to find BabelNet by setting the "babelnet.dir"
 property in the config/babelnet.var.properties file. For instance,
-assuming you unpacked BabelNet in the "/home/your_user/BabelNet-3.7",
+assuming you unpacked BabelNet in the "/home/your_user/BabelNet-4.0",
 you simply need to write the following within "config/babelnet.var.properties":
 
-    babelnet.dir=/home/your_user/BabelNet-3.7
+    babelnet.dir=/home/your_user/BabelNet-4.0
 
 If your WordNet is not installed in the standard location
 (/usr/local/share/wordnet-3.0), please change the corresponding property
@@ -191,14 +191,15 @@ AUTHORS
 Roberto Navigli, Sapienza University of Rome
 (navigli@di.uniroma1.it)
 
-Daniele Vannella, Sapienza University of Rome
-(vannella@di.uniroma1.it)
+Francesco Cecconi, Babelscape srl
+(cecconi@babelscape.com)
 
-Francesco Cecconi, Sapienza University of Rome
-(cecconi@di.uniroma1.it)
+Francesco Maria Elia, Babelscape srl
+(elia@babelscape.com)
 
 Additional credits go to:
-  Simone Paolo Ponzetto for working on versions `1.x`
+- Daniele Vannella for working on versions 2.x and 3.x
+- Simone Paolo Ponzetto for working on versions `1.x`
 
 COPYRIGHT
 ---------
@@ -218,5 +219,4 @@ may have using the following Google group:
 ACKNOWLEDGMENTS
 ---------------
 
-BabelNet and the BabelNet API are an output of the ERC Starting Grant
-MultiJEDI No. 259234.
+BabelNet has received funding from the European Research Council (ERC) under grant agreement No. 259234.

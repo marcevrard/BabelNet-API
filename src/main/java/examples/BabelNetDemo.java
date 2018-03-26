@@ -49,7 +49,7 @@ public class BabelNetDemo
 			bn.getSensesFrom(lemma, languageToSearch, UniversalPOS.NOUN);
 		Collections.sort(senses, new BabelSenseComparator());
 		for (BabelSense sense : senses)
-			System.out.println("\t=>"+sense.getSenseString());
+			System.out.println("\t=>"+sense.getSensekey());
 		System.out.println();
 		System.out.println("SYNSETS WITH \"" + lemma + "\"");
 		List<BabelSynset> synsets =
@@ -85,7 +85,7 @@ public class BabelNetDemo
 												.build());
 		Collections.sort(senses, new BabelSenseComparator());
 		for (BabelSense sense : senses)
-			System.out.println("\t=>"+sense.getSenseString());
+			System.out.println("\t=>"+sense.getSensekey());
 		System.out.println();
 		System.out.println("SYNSETS WITH \"" + lemma + "\"");
 		List<BabelSynset> synsets =

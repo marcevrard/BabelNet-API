@@ -21,7 +21,7 @@
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "it.uniroma1.lcl.babelnet.demo.BabelNetDemo",
+            "mainClass": "examples.BabelNetDemo",
             "projectName": "BabelNet-API",
             "args": ""
         },

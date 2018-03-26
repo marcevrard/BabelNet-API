@@ -1,4 +1,6 @@
 it.uniroma1.lcl.babelnet
 it.uniroma1.lcl.babelnet.data
+it.uniroma1.lcl.babelnet.impl
 it.uniroma1.lcl.babelnet.iterators
 it.uniroma1.lcl.babelnet.resources
+it.uniroma1.lcl.kb

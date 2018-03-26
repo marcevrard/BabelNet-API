@@ -1,0 +1,88 @@
+Open Multilingual Wordnet
+
+Documentation of and links to data for wordnets in 31 languages
+ (Albanian, Arabic, Danish, English, Persian, Finnish, French, Hebrew, Italian, Japanese, Basque, Catalan, Galician, Spanish,
+  Indonesian, Malaysian, Norwegian (Bokmal and Nynorsk), Portuguese, Thai, Greek, Polish, Chinese, Swedish, Slovene, ...). Size, quality and license varies widely, 
+  but all licenses are open licenses that allow redistribution. 
+
+Info: http://compling.hss.ntu.edu.sg/omw/
+
+More details:
+
+1. With CC-BY-NC-SA-30 license:
+  (MCR_EU) Open Multilingual WordNet (Basque) http://adimen.si.ehu.es/web/MCR/
+  (OMWN_HR) Open Multilingual WordNet (Croatian) http://www.cesar-project.net/
+
+  Folders: dict_CC_BY_NC_SA_30, gloss_CC_BY_NC_SA_30, lexicon_CC_BY_NC_SA_30
+
+2. With UNRESTRICTED license:
+  (OMWN_FA) Open Multilingual WordNet (Persian) http://www.pwn.ir/
+
+  Folders: dict, gloss, lexicon
+
+3. With WORDNET license:
+  (OMWN_ZH) Open Multilingual WordNet (Chinese) http://compling.hss.ntu.edu.sg/cow/
+  (OMWN_HE) Open Multilingual WordNet (Hebrew) http://cl.haifa.ac.il/projects/mwn/index.shtml
+  (OMWN_JA) Open Multilingual WordNet (Japanese) http://compling.hss.ntu.edu.sg/wnja/
+  (OMWN_NO) Open Multilingual WordNet (Norwegian (Bokmål)) http://www.nb.no/spraakbanken/tilgjengelege-ressursar/leksikalske-ressursar
+  (OMWN_PL) Open Multilingual WordNet (Polish) http://plwordnet.pwr.wroc.pl/wordnet/
+  (OMWN_TH) Open Multilingual WordNet (Thai) http://www.asianwordnet.org/
+  (OMWN_NN) Open Multilingual WordNet (Norwegian (Nynorsk)) http://www.nb.no/spraakbanken/tilgjengelege-ressursar/leksikalske-ressursar
+
+  Folders: dict_WORDNET, gloss_WORDNET, lexicon_WORDNET
+
+4. With MIT license:
+  (OMWN_ID) Open Multilingual WordNet (Indonesian) http://wn-msa.sourceforge.net/
+  (OMWN_MS) Open Multilingual WordNet (Malay) http://wn-msa.sourceforge.net/
+
+  Folders: dict_MIT, gloss_MIT, lexicon_MIT
+
+5. With CC-BY-SA-30 license:
+  (OMWN_AR) Open Multilingual WordNet (Arabic) http://www.globalwordnet.org/AWN/
+  (OMWN_LT) Open Multilingual WordNet (Lithuanian) http://korpus.juls.savba.sk/ltskwn_en.html
+  (OMWN_PT) Open Multilingual WordNet (Portuguese) https://github.com/arademaker/openWordnet-PT
+  (OMWN_RO) Open Multilingual WordNet (Romanian) http://www.racai.ro/tools/text/rowordnet-visualizer/
+  (OMWN_SK) Open Multilingual WordNet (Slovak) http://korpus.juls.savba.sk/WordNet_en.html
+  (SLOWNET) Open Multilingual WordNet (Slovenian) http://lojze.lugos.si/darja/research/slownet/
+  (WONEF) WordNet du Français http://wonef.fr/
+
+  Folders: dict_CC_BY_SA_30, gloss_CC_BY_SA_30, lexicon_CC_BY_SA_30
+
+6. With CC-BY-SA-40 license:
+  (OMWN_NL) Open Multilingual WordNet (Dutch) http://wordpress.let.vupr.nl/odwn/
+
+  Folders: dict_CC_BY_SA_30, gloss_CC_BY_SA_30, lexicon_CC_BY_SA_30
+
+7. With CC-BY-30 license:
+  (OMWN_SQ) Open Multilingual WordNet (Albanian) http://fjalnet.com/
+  (OMWN_BG) Open Multilingual WordNet (Bulgarian) http://www.bultreebank.org/
+  (MCR_CA) Open Multilingual WordNet (Catalan) http://adimen.si.ehu.es/web/MCR/
+  (OMWN_FI) Open Multilingual WordNet (Finnish) http://www.ling.helsinki.fi/en/lt/research/finnwordnet/
+  (MCR_GL) Open Multilingual WordNet (Galician) http://adimen.si.ehu.es/web/MCR/
+  (ICEWN) Open Multilingual WordNet (Icelandic) http://www.malfong.is/index.php?lang=en&pg=icewordnet
+  (OMWN_IT) Open Multilingual WordNet (Italian) http://multiwordnet.fbk.eu/english/home.php
+  (OMWN_KO) Korean WordNet http://wordnet.kaist.ac.kr/wordnet_pages/introduction_en.php
+  (MCR_ES) Open Multilingual WordNet (Spanish) http://adimen.si.ehu.es/web/MCR/
+  (MCR_PT) Open Multilingual WordNet (Portuguese) http://adimen.si.ehu.es/web/MCR/
+  (SALDO) Open Multilingual WordNet (Swedish) http://spraakbanken.gu.se/eng/resource/wordnet-saldo
+
+  Folders: dict_CC_BY_30, gloss_CC_BY_30, lexicon_CC_BY_30
+
+8. With CECILL-C license:
+  (OMWN_FR) Open Multilingual WordNet (French) http://alpage.inria.fr/~sagot/wolf-en.html
+  (OMWN_DA) Open Multilingual WordNet (Danish) http://wordnet.dk/lang
+
+  Folders: dict_CECILL_C, gloss_CECILL_C, lexicon_CECILL_C
+
+9. With APACHE-20 license:
+  (OMWN_EL) Open Multilingual WordNet (Greek) https://github.com/okfngr/wordnet
+
+  Folders: dict_APACHE_20, gloss_APACHE_20, lexicon_APACHE_20
+
+10. With GDFL license:
+  (OMWN_GAE) Irish WordNet (GAWN) https://github.com/jimregan/lemonGAWN
+
+11. With ODC-BY-10 license:
+  (IWN) Italian WordNet https://datahub.io/dataset/iwn
+
+  Folders: dict_ODC_BY_10, gloss_ODC_BY_10, lexicon_ODC_BY_10

@@ -6,18 +6,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
-// import java.util.Iterator;
+import java.util.Iterator;
 import java.util.List;
+
+import com.babelscape.util.UniversalPOS;
 
 import it.uniroma1.lcl.babelnet.BabelNet;
 import it.uniroma1.lcl.babelnet.BabelSense;
 import it.uniroma1.lcl.babelnet.BabelSynset;
 import it.uniroma1.lcl.babelnet.BabelSynsetComparator;
-import it.uniroma1.lcl.babelnet.BabelSynsetIDRelation;
-// import it.uniroma1.lcl.babelnet.iterators.BabelIterator;
-import it.uniroma1.lcl.babelnet.iterators.BabelSynsetIterator;
-import it.uniroma1.lcl.babelnet.data.BabelPOS;
+import it.uniroma1.lcl.babelnet.BabelSynsetRelation;
 import it.uniroma1.lcl.jlt.util.Language;
+
 
 public class BabelNetExtraction {
     static public void main(String[] args) {
@@ -37,11 +37,11 @@ public class BabelNetExtraction {
     public static void getRelationsWeight(String word) throws IOException {
         BabelNet bn = BabelNet.getInstance();
         System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
-        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, BabelPOS.NOUN);
+        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, UniversalPOS.NOUN);
         Collections.sort(synsets, new BabelSynsetComparator(word));
         for (BabelSynset synset : synsets) {
-            for (BabelSynsetIDRelation relation : synset.getEdges())
-                System.out.println(synset.getId().toString()
+            for (BabelSynsetRelation relation : synset.getOutgoingEdges())
+                System.out.println(synset.getID().toString()
                                    + "\t" + relation.getTarget()
                                    + "\t" + relation.getLanguage()
                                    + "\t" + relation.getWeight()
@@ -57,11 +57,11 @@ public class BabelNetExtraction {
     public static void getFrequencies(String word) throws IOException {
         BabelNet bn = BabelNet.getInstance();
         System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
-        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, BabelPOS.NOUN);
+        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, UniversalPOS.NOUN);
         Collections.sort(synsets, new BabelSynsetComparator(word));
         for (BabelSynset synset : synsets) {
             for (BabelSense sense : synset.getSenses(Language.EN))
-                System.out.println(synset.getId()
+                System.out.println(synset.getID()
                                    + "\t" + sense.getFrequency().toString()
                                    + "\t" + sense.getWordNetOffset()
                                    + "\t" + sense.toString());
@@ -74,11 +74,11 @@ public class BabelNetExtraction {
             throws FileNotFoundException, UnsupportedEncodingException {
         try (PrintWriter writer = new PrintWriter(outputPath.toString(), "UTF-8")) {
             BabelNet bn = BabelNet.getInstance();
-            BabelSynsetIterator bnIter = bn.getSynsetIterator();
+            Iterator<BabelSynset> bnIter = bn.iterator();
             while (bnIter.hasNext()) {
                 BabelSynset synset = bnIter.next();
                 for (BabelSense sense : synset.getSenses(Language.EN)) {
-                    writer.println(synset.getId()
+                    writer.println(synset.getID()
                                    + "\t" + sense.getFrequency().toString()
                                    + "\t" + sense.getWordNetOffset()
                                    + "\t" + sense.toString());
@@ -90,11 +90,11 @@ public class BabelNetExtraction {
     /** Test method */
     public static void getAllSynsets() {
         BabelNet bn = BabelNet.getInstance();
-        BabelSynsetIterator bnIter = bn.getSynsetIterator();
+        Iterator<BabelSynset> bnIter = bn.iterator();
         // BabelIterator<BabelSynset> bnIter = bn.getSynsetIterator();
         // Iterator<BabelSynset> bnIter = bn.getSynsetIterator();
         while (bnIter.hasNext()) {
-            System.out.println(bnIter.next().getId());
+            System.out.println(bnIter.next().getID());
         }
         // for (BabelSynset synset : bnIter) {
         //     System.out.println(synset.getId());

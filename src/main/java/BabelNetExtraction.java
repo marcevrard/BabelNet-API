@@ -23,17 +23,43 @@ public class BabelNetExtraction {
     static public void main(String[] args) {
         try {
             String word = "parade";
-            // getFrequencies(word);
-            getRelationsWeight(word);
             Path outputFile = getOutputPath();
+
+            // writeAllSynsetRelations(outputFile);
+            // getRelationsWeight(word);
+
+            writeAllSynsetCorrespondences(outputFile);
+            // getSynsetCorrespondence(word);
+
             // writeAllSynsetsFrequency(outputFile);
+            // getFrequencies(word);
+
             // getAllSynsets();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /** Prototyping method to view single synset relationships' frequency */
+    /** Method of interest to write all relationships' frequency from a single synset */
+    public static void writeAllSynsetRelations(Path outputPath)
+            throws FileNotFoundException, UnsupportedEncodingException {
+        try (PrintWriter writer = new PrintWriter(outputPath.toString(), "UTF-8")) {
+            BabelNet bn = BabelNet.getInstance();
+            Iterator<BabelSynset> bnIter = bn.iterator();
+            while (bnIter.hasNext()) {
+                BabelSynset synset = bnIter.next();
+                for (BabelSynsetRelation relation : synset.getOutgoingEdges())
+                    writer.println(synset.getID()
+                                   + "\t" + relation.toString()
+                                   // + "\t" + relation.getWeight()
+                                   // + "\t" + relation.getNormalizedWeight()
+                                   + "\t" + relation.getPointer());
+            }
+        }
+    }
+
+    /** Prototyping method to view all relationships' frequency from a single synset */
     public static void getRelationsWeight(String word) throws IOException {
         BabelNet bn = BabelNet.getInstance();
         System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
@@ -44,13 +70,41 @@ public class BabelNetExtraction {
                 System.out.println(synset.getID().toString()
                                    + "\t" + relation.getTarget()
                                    + "\t" + relation.getLanguage()
-                                   + "\t" + relation.getWeight()
-                                   + "\t" + relation.getNormalizedWeight()
+                                   // + "\t" + relation.getWeight()
+                                   // + "\t" + relation.getNormalizedWeight()
                                    + "\t" + relation.getPointer()
-                                   + "\t" + relation.toString()
-                );
+                                   + "\t" + relation.toString());
             System.out.println("-----");
         }
+    }
+
+    /** Method of interest to write the correspondences between BN and WN synsets */
+    public static void writeAllSynsetCorrespondences(Path outputPath)
+            throws FileNotFoundException, UnsupportedEncodingException {
+        try (PrintWriter writer = new PrintWriter(outputPath.toString(), "UTF-8")) {
+            BabelNet bn = BabelNet.getInstance();
+            Iterator<BabelSynset> bnIter = bn.iterator();
+            while (bnIter.hasNext()) {
+                BabelSynset synset = bnIter.next();
+                if (!synset.getWordNetOffsets().isEmpty())
+                    writer.println(synset.getID()
+                                   + "\t" + synset.getWordNetOffsets()
+                                   + "\t" + synset.toString());
+            }
+        }
+    }
+
+    /** Prototyping method to view single word synsets' frequency */
+    public static void getSynsetCorrespondence(String word) throws IOException {
+        BabelNet bn = BabelNet.getInstance();
+        System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
+        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, UniversalPOS.NOUN);
+        Collections.sort(synsets, new BabelSynsetComparator(word));
+        for (BabelSynset synset : synsets)
+            if (!synset.getWordNetOffsets().isEmpty())
+                System.out.println(synset.getID()
+                                   + "\t" + synset.getWordNetOffsets()
+                                   + "\t" + synset.toString());
     }
 
     /** Prototyping method to view single word synsets' frequency */
@@ -63,7 +117,6 @@ public class BabelNetExtraction {
             for (BabelSense sense : synset.getSenses(Language.EN))
                 System.out.println(synset.getID()
                                    + "\t" + sense.getFrequency().toString()
-                                   + "\t" + sense.getWordNetOffset()
                                    + "\t" + sense.toString());
             System.out.println("-----");
         }
@@ -80,7 +133,6 @@ public class BabelNetExtraction {
                 for (BabelSense sense : synset.getSenses(Language.EN)) {
                     writer.println(synset.getID()
                                    + "\t" + sense.getFrequency().toString()
-                                   + "\t" + sense.getWordNetOffset()
                                    + "\t" + sense.toString());
                 }
             }

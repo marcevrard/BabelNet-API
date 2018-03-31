@@ -24,9 +24,15 @@ Create the project structure
 And add:
 
     dependencies {
+        ...
         // BabelNet related (Add External JARs)
         compile fileTree(dir: 'lib', include: ['*.jar'])
+        ...
     }
+
+    // Apply the application plugin to allow for ./gradlew run
+    apply plugin:'application'
+    mainClassName = "BabelNetDemo"
 
 ### Or using `maven` *(incomplete!)*
 

@@ -25,10 +25,10 @@ public class BabelNetExtraction {
             String word = "parade";
             Path outputFile = getOutputPath();
 
-            // writeAllSynsetRelations(outputFile);
-            // getRelationsWeight(word);
+            writeAllSynsetRelations(outputFile);
+            // getAllSynsetRelations(word);
 
-            writeAllSynsetCorrespondences(outputFile);
+            // writeAllSynsetCorrespondences(outputFile);
             // getSynsetCorrespondence(word);
 
             // writeAllSynsetsFrequency(outputFile);
@@ -51,6 +51,7 @@ public class BabelNetExtraction {
                 BabelSynset synset = bnIter.next();
                 for (BabelSynsetRelation relation : synset.getOutgoingEdges())
                     writer.println(synset.getID()
+                                   + "\t" + synset.getLanguages()
                                    + "\t" + relation.toString()
                                    // + "\t" + relation.getWeight()
                                    // + "\t" + relation.getNormalizedWeight()
@@ -60,7 +61,7 @@ public class BabelNetExtraction {
     }
 
     /** Prototyping method to view all relationships' frequency from a single synset */
-    public static void getRelationsWeight(String word) throws IOException {
+    public static void getAllSynsetRelations(String word) throws IOException {
         BabelNet bn = BabelNet.getInstance();
         System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
         List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, UniversalPOS.NOUN);
@@ -68,12 +69,13 @@ public class BabelNetExtraction {
         for (BabelSynset synset : synsets) {
             for (BabelSynsetRelation relation : synset.getOutgoingEdges())
                 System.out.println(synset.getID().toString()
-                                   + "\t" + relation.getTarget()
-                                   + "\t" + relation.getLanguage()
+                                   + "\t" + synset.getLanguages()
+                                   // + "\t" + relation.getTarget()
+                                   // + "\t" + relation.getLanguage()
                                    // + "\t" + relation.getWeight()
                                    // + "\t" + relation.getNormalizedWeight()
-                                   + "\t" + relation.getPointer()
-                                   + "\t" + relation.toString());
+                                   + "\t" + relation.toString()
+                                   + "\t" + relation.getPointer());
             System.out.println("-----");
         }
     }
@@ -88,6 +90,7 @@ public class BabelNetExtraction {
                 BabelSynset synset = bnIter.next();
                 if (!synset.getWordNetOffsets().isEmpty())
                     writer.println(synset.getID()
+                                   + "\t" + synset.getLanguages()
                                    + "\t" + synset.getWordNetOffsets()
                                    + "\t" + synset.toString());
             }
@@ -103,6 +106,7 @@ public class BabelNetExtraction {
         for (BabelSynset synset : synsets)
             if (!synset.getWordNetOffsets().isEmpty())
                 System.out.println(synset.getID()
+                                   + "\t" + synset.getLanguages()
                                    + "\t" + synset.getWordNetOffsets()
                                    + "\t" + synset.toString());
     }

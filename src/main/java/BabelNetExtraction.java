@@ -47,15 +47,18 @@ public class BabelNetExtraction {
         try (PrintWriter writer = new PrintWriter(outputPath.toString(), "UTF-8")) {
             BabelNet bn = BabelNet.getInstance();
             Iterator<BabelSynset> bnIter = bn.iterator();
+            String synsetLang;
             while (bnIter.hasNext()) {
                 BabelSynset synset = bnIter.next();
+                if (synset.getLanguages().contains(Language.EN))
+                    synsetLang = "EN";
+                else
+                    synsetLang = "OL";  // Other language(s) than English
                 for (BabelSynsetRelation relation : synset.getOutgoingEdges())
                     writer.println(synset.getID()
+                                   + "\t" + synsetLang
                                    + "\t" + synset.getLanguages()
-                                   + "\t" + relation.toString()
-                                   // + "\t" + relation.getWeight()
-                                   // + "\t" + relation.getNormalizedWeight()
-                                   + "\t" + relation.getPointer());
+                                   + "\t" + relation.toString());
             }
         }
     }
@@ -64,12 +67,17 @@ public class BabelNetExtraction {
     public static void getAllSynsetRelations(String word) throws IOException {
         BabelNet bn = BabelNet.getInstance();
         System.out.println("SYNSETS WITH English word: \"" + word + "\"\n");
-        List<BabelSynset> synsets = bn.getSynsets(word, Language.EN, UniversalPOS.NOUN);
+        List<BabelSynset> synsets = bn.getSynsets(word, Language.FR, UniversalPOS.NOUN);
         Collections.sort(synsets, new BabelSynsetComparator(word));
+        String synsetLang;
         for (BabelSynset synset : synsets) {
+            if (synset.getLanguages().contains(Language.EN))
+                synsetLang = "EN";
+            else
+                synsetLang = "OL";  // Other language(s) than English
             for (BabelSynsetRelation relation : synset.getOutgoingEdges())
                 System.out.println(synset.getID().toString()
-                                   + "\t" + synset.getLanguages()
+                                   + "\t" + synsetLang
                                    // + "\t" + relation.getTarget()
                                    // + "\t" + relation.getLanguage()
                                    // + "\t" + relation.getWeight()

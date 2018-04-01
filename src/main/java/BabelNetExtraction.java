@@ -57,7 +57,6 @@ public class BabelNetExtraction {
                 for (BabelSynsetRelation relation : synset.getOutgoingEdges())
                     writer.println(synset.getID()
                                    + "\t" + synsetLang
-                                   + "\t" + synset.getLanguages()
                                    + "\t" + relation.toString());
             }
         }
@@ -76,14 +75,15 @@ public class BabelNetExtraction {
             else
                 synsetLang = "OL";  // Other language(s) than English
             for (BabelSynsetRelation relation : synset.getOutgoingEdges())
-                System.out.println(synset.getID().toString()
+                System.out.println(synset.getID()
                                    + "\t" + synsetLang
                                    // + "\t" + relation.getTarget()
                                    // + "\t" + relation.getLanguage()
                                    // + "\t" + relation.getWeight()
                                    // + "\t" + relation.getNormalizedWeight()
                                    + "\t" + relation.toString()
-                                   + "\t" + relation.getPointer());
+                                   // + "\t" + relation.getPointer()
+                                  );
             System.out.println("-----");
         }
     }
